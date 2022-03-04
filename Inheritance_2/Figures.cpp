@@ -50,8 +50,6 @@ private:
     double radius;
 };
 
-// эллипс, круг, многоугольник, треугольник, четырёхугольник, прямоугольник, квадрат.
-
 class RegularPolygon : public Figure {
 public:
     RegularPolygon(double a, int n) : a(a), n(n)
