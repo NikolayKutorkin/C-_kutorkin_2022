@@ -61,6 +61,17 @@ class Knight: public Player {
             return false;
         } else return true;
     }
+
+    virtual bool canCast() const {
+        return false;
+    }
+
+    // Проверка, может ли игрок лечить других игроков.
+    // Лечить умеет или любой волшебник, или
+    // игрок достаточно высокого уровня.
+    virtual bool canHeal() const {
+        return canCast() || getLevel() > 10;
+    }
 };
 
 
@@ -71,5 +82,15 @@ class Wizard: public Player {
         } else if (item->getLevel() > level) {
             return false;
         } else return true;
+    }
+
+    virtual bool canCast() const {
+        return true;
+    }
+    // Проверка, может ли игрок лечить других игроков.
+    // Лечить умеет или любой волшебник, или
+    // игрок достаточно высокого уровня.
+    virtual bool canHeal() const {
+        return canCast() || getLevel() > 10;
     }
 };
