@@ -9,23 +9,22 @@ public:
     //MoneyBox() = default;
     // Добавить монетку достоинством value
     void addCoin(unsigned int value) {
-        coins_number++;
-        coins_value += value;
+        coin.first++;
+        coin.second += value;
     }
 
     // Получить текущее количество монеток в копилке
     unsigned int getCoinsNumber() const {
-        return coins_number;
+        return coin.first;
     }
 
     // Получить текущее общее достоинство всех монеток
     unsigned int getCoinsValue() const {
-        return coins_value;
+        return coin.second;
     }
 
 private:
-    unsigned coins_number = 0;
-    unsigned coins_value = 0;
+    std::pair<unsigned, unsigned> coin;
 };
 
 int main() {
